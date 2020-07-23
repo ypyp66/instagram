@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-color: #fafafa;
+}
+.header_header{
+    display: inline-block;
+    position: fixed;
+    width: 100%;
+    height: 54px;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+main{
+    margin-top: 50px;
+}
+.top{
+    display: flex;
+    height: inherit;
+    align-items: center;
+    padding-left: 30px;
+    justify-content: center;
+    height: 100%;
+}
+.logo{
+    margin-top: 7px;
+    min-width: 125px;
+    width: 300px;
+}
+.logo a{
+    height: inherit;
+}
+.search{
+    min-width: 200px;
+    width: 300px;
+    align-items: center;
+}
+.search input{
+    background: rgba(var(--b3f,250,250,250),1);
+    border: 1px solid lightgray;
+    height: 25px;
+    font-size: 16px;
+    text-align: center;
+}
+.icons{
+    width: 300px;
+}
+.icons ul{
+    list-style: none;
+    min-width: 255px;
+    margin-bottom: 20px;
+}
+.icons ul li{
+    font-size: 20px;
+    display: inline;
+    margin-left: 10px;
+}
+.icons ul li a:active{
+    color: black;
+}
+.icons ul li a:visited{
+    color: black;
+}
+.modal2{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    overflow: auto;
+}
+.modal_button{
+    cursor: pointer;
+}
+.showing{
+    display: none;
+}
+.modal_layer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal_content{
+    position: fixed; /* */
+    left: 50%;
+    top: 50%;
+    width: 48%;
+    height: 59%;
+    width: 400px;
+    height: 300px;
+    margin:10px auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+.button{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.button button{
+    cursor: pointer;
+    line-height: 1.5;
+    min-height: 48px;
+    padding: 4px 8px;
+    text-align: center;
+    height: 100%;
+    background-color: white;
+    border: 0;
+    outline: 0;
+    border-top: 1px solid rgba(var(--b6a,219,219,219),1);
+}
+.button button:active{
+    background-color: rgb(195, 195, 195);
+}
+.report{
+    color: #ed4956;
+    font-weight: bold;
+}
+.block{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.modal_close{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

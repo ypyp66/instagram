@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+}
+.iPhone{
+    position: absolute;
+    top: 10px;
+    left: 80px;
+}
+.galaxy{
+    position: relative;
+}
+.container, .volup, .voldown, .onoff{
+    position: relative;
+    border: 1px solid gray;
+    background-color: white;
+}
+.container{
+    box-shadow: inset 0 1px 10px gray;
+    width: 300px;
+    height: 500px;
+    border-radius: 40px;
+    align-items: center;
+}
+.volup, .voldown{
+    width: 4px;
+    height: 30px;
+    top: 70px;
+    right:4px;
+    border-radius: 5px;
+}
+.onoff{
+    float: right;
+    border-radius: 5px;
+    top: 70px;
+    left: 7px;
+    width: 7px;
+    height: 40px;
+}
+.voldown{
+    margin-top: 10px;
+}
+.screen, .camera, .sensor, .speaker, .home{
+    border: 1px solid black;
+    background-color: black;
+    position: relative;
+}
+.camera, .sensor, .speaker, .home{
+    border-radius: 100px;
+}
+.home{
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: inset 0 1px 5px silver;
+    width: 40px;
+    height: 40px;
+    top: -40px;
+    left: 125px;
+}
+.home div{
+    border: 2px solid gray;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    left: 6.5px;
+    top: 6.5px;
+}
+.screen{
+    background-image: url('img/짱구.jpg');
+    background-size: cover;
+    width: 250px;
+    height: 380px;
+    left: 22px;
+    top: -50px;
+}
+.galaxy .container{
+    background-color: black;
+    box-shadow: inset 0 1px 10px rgb(196, 195, 195);
+}
+.galaxy .screen{
+    left: 20px;
+    top: 50px;
+}
+.sensor{
+    width: 10px;
+    height: 10px;
+    left: 145px;
+    top: 10px;
+}
+.camera{
+    width: 15px;
+    height: 15px;
+    top: 15px;
+    left: 100px;
+}
+.speaker{
+    background-color: rgb(243, 242, 242);
+    width: 60px;
+    height: 7px;
+    transform: translate(200%);
+    top: 5px;
+}
+
+@media (max-width:800px){
+    .iPhone, .galaxy{
+        display: none;
+    }
+    .main{
+        margin: 0px;
+    }
+    .footer{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/social.css">
+    <link rel="stylesheet" href="instagram.css">
+    <link rel="stylesheet" href="insta.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Instagram</title>
+    
+    <script type="text/javascript">
+        $("#id").on("change keyup paste", function(){
+	        alert("change");
+        });
+    </script>
+</head>
+<body>
+    <h1 class="insta_name"><i class="icon-camera-alt"></i>Instagram</h1>
+    <div class="bodywrap">
+        <div class="mg">
+            <div class="galaxy">
+                <div class="container">
+                    <div class="screen"></div>
+                    <div class="home">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="iPhone">
+                <div class="container">
+                    <div class="sensor"></div>
+                    <div class="camera"></div><div class="speaker"></div>
+                    <div class="onoff"></div>
+                    <div class="volup"></div>
+                    <div class="voldown"></div>
+                    <div class="screen"></div>
+                    <div class="home">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="main1">
+                    <form name="form1" method="POST" onsubmit="return false;">
+                        <h3 class="insta_name2">Instagram</h3>
+                        <p>
+                            <input id="id" name="id" onfocus="alll()" type="id" autocomplete="on" placeholder="아이디">
+                        </p>
+                        <p>
+                            <input id="password" name="password" type="password" autocomplete="on" placeholder="비밀번호">
+                        </p>
+                        <p>
+                            <input type="submit" value="로그인" class="button">
+                        </p>
+                    </form>
+                    <p>
+                        ------------ 또는 -------------
+                    </p>
+                    <p class="facebook">
+                        <a href=""><i class="icon-facebook-official">facebook으로 로그인</i></a>
+                    </p>
+                        <div class="register">
+                            비밀번호를 잊으셨나요?
+                        </div>
+                </div>
+                <div class="main2">
+                    <p>
+                        계정이 없으신가요? <span class="join"><a href="register.html">가입하기</a></span>
+                    </p>
+                </div>
+                앱을 다운로드하세요 <br>
+                <div class="download">
+                    <img src="img/appstore.jpg" alt=""> <img src="img/playstore.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <nav class="nav">
+                <ul class="ul">
+                    <li>소개</li>
+                    <li>도움말</li>
+                    <li>홍보 센터</li>
+                    <li>API</li>
+                    <li>채용정보</li>
+                    <li>개인정보처리방침</li>
+                    <li>약관</li>
+                    <li>위치</li>
+                    <li>인기계정</li>
+                    <li>해시태그</li>
+                    <li>언어</li>
+                </ul>
+            </nav>
+            <nav>© 2020 INSTAGRAM FROM FACEBOOK</nav>
+        </div>
+    </div>
+    
+    <script>
+        var form = document.querySelector('form');
+        form.addEventListener("submit", login);
+        async function login(){
+            var user = {
+                id : form.elements['id'].value,
+                password : form.elements['password'].value
+            };
+            if(!user.id =="" && !user.password ==""){
+                fetch('http://localhost:3001/users', {
+                method : 'POST',
+                headers: {
+                    'Content-Type' : 'application/json; charset=utf-8'
+                },
+                body : JSON.stringify(user)
+                })
+                .then(function(response){
+                    return response.json();
+                    console.log(response.json());
+                })
+                .then(function(yeonbeen) {
+                    location.href='main.html';
+                    localStorage.setItem("userInfo", JSON.stringify(user.id));
+                });
+            }
+            else{
+                alert('아이디와 비밀번호를 입력하세요');
+            }
+        }
+
+        function alll(){
+            const loginBtn = document.querySelector('.button')
+            var id = document.form1.id.value;
+            var pw = document.form1.password.value;
+            var id_length = id.length;
+            var pw_length = pw.length;
+
+            if(id_length >= 10 && pw_length >=10){
+                loginBtn.style.backgroundColor = "#0095f6";
+            }else{
+                loginBtn.style.backgroundColor = "rgb(154, 212, 231)";
+            }
+            setTimeout("alll()", 0);
+        }
+    </script>
+</body>
+</html>

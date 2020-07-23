@@ -1,0 +1,15 @@
+.contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.select{
+    width: 50%;
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+.select ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
